@@ -1,0 +1,198 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Updated color palette for warm, appetizing pastry theme */
+  --background: 0 0% 98%; /* Soft off-white for backgrounds */
+  --foreground: 215 25% 27%; /* Deep gray for primary text */
+  --card: 0 0% 100%; /* White for cards to create a clean, premium feel */
+  --card-foreground: 215 25% 27%; /* Dark gray for text inside cards */
+  --popover: 0 0% 100%; /* White for popover elements */
+  --popover-foreground: 215 25% 27%; /* Dark gray for text inside popovers */
+  --primary: 0 84% 60%; /* Red for primary actions (e.g., buttons) */
+  --primary-foreground: 0 0% 100%; /* White text on primary buttons */
+  --secondary: 38 92% 50%; /* Yellow-orange for secondary actions */
+  --secondary-foreground: 215 25% 27%; /* Dark gray for text on secondary buttons */
+  --muted: 0 0% 98%; /* Soft background for muted areas */
+  --muted-foreground: 215 16% 47%; /* Medium gray for muted text */
+  --accent: 0 84% 60%; /* Accent color for highlights */
+  --accent-foreground: 0 0% 100%; /* White text on accent elements */
+  --destructive: 0 84% 60%; /* Red for destructive actions (e.g., delete) */
+  --destructive-foreground: 0 0% 100%; /* White text on destructive buttons */
+  --border: 214 32% 91%; /* Light gray for borders */
+  --input: 0 0% 100%; /* White for input fields */
+  --ring: 0 84% 60% / 0.5; /* Semi-transparent red for focus rings */
+  --chart-1: 0 84% 60%; /* Red for chart elements */
+  --chart-2: 38 92% 50%; /* Yellow for chart elements */
+  --chart-3: 43 96% 56%; /* Darker yellow for chart elements */
+  --chart-4: 215 16% 47%; /* Gray for chart elements */
+  --chart-5: 215 25% 27%; /* Dark gray for chart elements */
+  --radius: 0.5rem; /* Rounded corners for a softer interface */
+  --sidebar: 0 0% 100%; /* White for sidebar background */
+  --sidebar-foreground: 215 25% 27%; /* Dark gray for sidebar text */
+  --sidebar-primary: 0 0% 98%; /* Soft background for primary sidebar sections */
+  --sidebar-primary-foreground: 215 25% 27%; /* Dark gray for primary sidebar text */
+  --sidebar-accent: 38 92% 50%; /* Yellow for sidebar accents */
+  --sidebar-accent-foreground: 0 0% 100%; /* White text on sidebar accents */
+  --sidebar-border: 214 32% 91%; /* Light gray for sidebar borders */
+  --sidebar-ring: 38 92% 50% / 0.5; /* Semi-transparent yellow for sidebar focus */
+}
+
+.dark {
+  --background: 215 28% 17%; /* Dark background */
+  --foreground: 210 40% 98%; /* Light text */
+  --card: 215 25% 27%; /* Dark card background */
+  --card-foreground: 210 40% 98%; /* Light text on cards */
+  --popover: 215 25% 27%; /* Dark popover background */
+  --popover-foreground: 210 40% 98%; /* Light text on popovers */
+  --primary: 0 72% 51%; /* Lighter red for dark mode */
+  --primary-foreground: 0 0% 100%; /* White text on primary buttons */
+  --secondary: 45 93% 58%; /* Lighter yellow for dark mode */
+  --secondary-foreground: 215 28% 17%; /* Dark text on secondary buttons */
+  --muted: 215 16% 47%; /* Dark muted background */
+  --muted-foreground: 215 20% 65%; /* Light gray for muted text */
+  --accent: 0 72% 51%; /* Lighter red accent for dark mode */
+  --accent-foreground: 0 0% 100%; /* White text on accent elements */
+  --destructive: 0 72% 51%; /* Lighter red for destructive actions */
+  --destructive-foreground: 0 0% 100%; /* White text on destructive buttons */
+  --border: 215 16% 47%; /* Dark border */
+  --input: 215 25% 27%; /* Dark input background */
+  --ring: 0 72% 51% / 0.5; /* Semi-transparent red for focus rings */
+  --chart-1: 0 72% 51%; /* Lighter red for chart elements */
+  --chart-2: 45 93% 58%; /* Lighter yellow for chart elements */
+  --chart-3: 32 95% 44%; /* Orange for chart elements */
+  --chart-4: 215 16% 47%; /* Gray for chart elements */
+  --chart-5: 215 20% 65%; /* Light gray for chart elements */
+  --sidebar: 215 25% 27%; /* Dark sidebar background */
+  --sidebar-foreground: 210 40% 98%; /* Light sidebar text */
+  --sidebar-primary: 215 16% 47%; /* Dark primary sidebar sections */
+  --sidebar-primary-foreground: 210 40% 98%; /* Light primary sidebar text */
+  --sidebar-accent: 45 93% 58%; /* Yellow sidebar accents */
+  --sidebar-accent-foreground: 215 28% 17%; /* Dark text on sidebar accents */
+  --sidebar-border: 215 16% 47%; /* Dark sidebar borders */
+  --sidebar-ring: 45 93% 58% / 0.5; /* Semi-transparent yellow for sidebar focus */
+}
+
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-feature-settings: "rlig" 1, "calt" 1;
+    font-smooth: antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.25;
+  }
+  
+  button {
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  input, textarea, select {
+    background-color: hsl(var(--input));
+    border-color: hsl(var(--border));
+    transition: all 0.2s ease-in-out;
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Better focus styles */
+  *:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+  
+  /* Prevent layout shift */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Better text rendering */
+  p, span, div {
+    text-rendering: optimizeLegibility;
+  }
+  
+  /* Performance optimizations */
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  
+  /* Better scrolling performance */
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+  
+  /* Hardware acceleration for animations */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+}
+
+@layer utilities {
+  /* Smooth transitions for common interactions */
+  .transition-smooth {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .transition-bounce {
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  /* Better hover effects */
+  .hover-lift {
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* Loading states */
+  .loading {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  /* Card hover effects */
+  .card-hover {
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  
+  /* Button animations */
+  .btn-press {
+    transition: transform 0.1s ease-in-out;
+  }
+  
+  .btn-press:active {
+    transform: scale(0.95);
+  }
+}
