@@ -26,7 +26,7 @@ A comprehensive web application for learning pastry techniques with interactive 
 
 ## 🚀 Live Demo
 
-**[View Live Demo](https://your-username.github.io/patissier-practice)**
+**[View Live Demo](https://ajtruckinginc.github.io/patissier-practice)**
 
 ## 🛠️ Tech Stack
 
@@ -47,7 +47,7 @@ A comprehensive web application for learning pastry techniques with interactive 
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/patissier-practice.git
+   git clone https://github.com/ajtruckinginc/patissier-practice.git
    cd patissier-practice
    ```
 
