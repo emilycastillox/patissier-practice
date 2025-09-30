@@ -1,5 +1,5 @@
 "use client"
-
+// test commit
 import { Button } from "@/components/ui/button"
 import { ChefHat, BookOpen, Trophy, Brain, Heart, TrendingUp } from "lucide-react"
 import { useFavorites } from "@/lib/contexts/FavoritesContext"
