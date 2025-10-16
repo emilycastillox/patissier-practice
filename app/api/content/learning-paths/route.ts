@@ -1,23 +1,8 @@
 import { NextResponse } from 'next/server'
 import { contentService } from '@/lib/services/contentService'
 
-export async function GET(request: Request) {
+export async function GET() {
   try {
-    const { searchParams } = new URL(request.url)
-    const level = searchParams.get('level') as any
-    const difficulty = searchParams.get('difficulty') as any
-    const search = searchParams.get('search')
-    const sortBy = searchParams.get('sortBy') as any
-    const sortOrder = searchParams.get('sortOrder') as any
-
-    const filters = {
-      level,
-      difficulty,
-      search,
-      sortBy,
-      sortOrder
-    }
-
     // Use mock data directly for better performance
     const learningPaths = contentService.getMockLearningPaths()
     
